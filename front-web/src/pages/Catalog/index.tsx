@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from './components/ProductCard';
 import './style.scss';
 const Catalog =()=>(
@@ -7,11 +8,9 @@ const Catalog =()=>(
             Catálogo de produtos
         </h1>
         <div className="catalog-products">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <Link to="products/1">
+                <ProductCard />
+            </Link>   
         </div>
     </div>
 );
