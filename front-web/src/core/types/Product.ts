@@ -2,7 +2,7 @@ import { type } from "os"
 
 export type ProductsResponse = {
     content: Product[];
-    totalPage: number;
+    totalPages: number;
 }
 export type Product = {
     id:number;

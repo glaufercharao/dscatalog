@@ -1,7 +1,6 @@
 .catalog-container{
     margin-top: 26px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding:0 40px 50px 40px;
 }
 .catalog-title{
     font-size: 24px;
@@ -13,6 +12,6 @@
     margin-top: 43px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 250px);
-    grid-grap: 33px 30px;
+    grid-gap: 33px 30px;
     justify-content: space-between;
 }
