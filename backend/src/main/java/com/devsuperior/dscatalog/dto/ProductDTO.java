@@ -9,14 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Positive;
+
 public class ProductDTO implements Serializable {
     private static final long serialVersionUID=1L;
 
     private Long id;
+    @NotBlank(message = "o nome deve ser informado")
     private String name;
     private String description;
+    @Positive(message = "O valor deve ser positivo.")
     private Double price;
     private String imgUrl;
+    @PastOrPresent(message = "A data não pode ser futura")
     private Instant date;
 
     private List<CategoryDTO> categories = new ArrayList<CategoryDTO>();
