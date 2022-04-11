@@ -27,4 +27,9 @@ public class CategoryService implements Mappable {
         return map(categoryRepository.findById(id).orElseThrow(
                 () -> new EntityNotFoundException("Entity not found")),CategoryDTO.class);
     }
+
+    @Transactional
+    public CategoryDTO insert(CategoryDTO categoryDTO) {
+        return map(categoryRepository.save(map(categoryDTO, Category.class)), CategoryDTO.class);
+    }
 }
