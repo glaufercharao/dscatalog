@@ -44,4 +44,10 @@ public class CategoryResource {
                 .buildAndExpand(categoryDTO.getId()).toUri();
         return ResponseEntity.created(uri).body(categoryDTO);
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<CategoryDTO> delete(@PathVariable Long id){
+        categoryService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
