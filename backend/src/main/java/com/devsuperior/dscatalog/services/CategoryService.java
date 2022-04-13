@@ -9,6 +9,8 @@ import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,8 +24,8 @@ public class CategoryService implements Mappable {
     private CategoryRepository categoryRepository;
 
     @Transactional(readOnly = true)
-    public List<CategoryDTO> findAllCategory(){
-        return map(categoryRepository.findAll(),CategoryDTO.class);
+    public Page<CategoryDTO> findAllCategoryPaged(PageRequest pageRequest){
+        return map(categoryRepository.findAll(pageRequest),CategoryDTO.class);
     }
 
     @Transactional(readOnly = true)
